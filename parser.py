@@ -105,6 +105,8 @@ def parse_email_body(body):
             else:
                 fields['note'] = f"Agency Name: {agency_name}"
     else:
+        fields['building_id'] = '25787'
+        fields['adv_id'] = '10100002'
         for line in lines:
             if line.startswith('Name:') or (fields['name'] == '' and not line.startswith(('Email:', 'Phone:', 'url:', 'Additional:'))):
                 fields['name'] = line.replace('Name:', '').strip()
